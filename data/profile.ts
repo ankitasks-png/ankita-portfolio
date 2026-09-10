@@ -1,7 +1,7 @@
 export const profile = {
   name: 'ANKITA S',
   email: 'ankita.s@example.com',
-  image: '/ankuhill.jpg',
+  image: '/ankuhill.jpeg',
   resume: '/resume.pdf',
   tagline: 'Inquisitive and geek for anything technical, movies and sports',
   roles: ['CSE Student', 'ML Enthusiast', 'Cybersecurity Beginner', 'Fitness Freak', 'Musician (Singer and Guitarist)'],
