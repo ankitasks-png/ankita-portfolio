@@ -1,73 +1,137 @@
 
-import { motion } from "motion/react";
-import {
-  ArrowDown,
-  ArrowRight,
-  Github,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function Hero() {
+  const identities = [
+    "Tech Enthusiast",
+    "Guitarist",
+    "Singer",
+    "Sport Enthusiast",
+    "Cinephile",
+  ];
+
+  const [currentIdentity, setCurrentIdentity] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIdentity((prev) => (prev + 1) % identities.length);
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center px-6 pt-28 relative overflow-hidden"
+      style={{
+        minHeight: "calc(100vh - 76px)",
+        background: "#17151d",
+        color: "white",
+        display: "flex",
+        alignItems: "center",
+        padding: "70px 7%",
+        overflow: "hidden",
+      }}
     >
-      <div className="absolute w-96 h-96 bg-violet-600/20 blur-[130px] rounded-full top-20 right-0" />
-
-      <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
-
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1350px",
+          margin: "auto",
+          display: "grid",
+          gridTemplateColumns: "1.15fr 0.85fr",
+          alignItems: "center",
+          gap: "65px",
+        }}
+      >
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-violet-400 tracking-[0.3em] uppercase text-sm mb-6">
-            Hello, I'm
+          <p
+            style={{
+              color: "#e8a0c1",
+              letterSpacing: "5px",
+              marginBottom: "20px",
+            }}
+          >
+            HELLO, I'M
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Ankita
-            <span className="text-violet-400"> Satish.</span>
+          <h1
+            style={{
+              fontSize: "clamp(55px, 6vw, 88px)",
+              fontWeight: "700",
+              lineHeight: "1.1",
+              margin: 0,
+            }}
+          >
+            ANKITA <span style={{ color: "#df91b7" }}>S.</span>
           </h1>
 
-          <h2 className="text-2xl md:text-3xl text-gray-300 mt-6">
-            Computer Science Engineer
+          <h2
+            style={{
+              color: "#d5c8d6",
+              fontSize: "21px",
+              marginTop: "25px",
+            }}
+          >
+            BTech CSE Student @ PES University
           </h2>
 
-          <p className="text-gray-400 leading-8 mt-6 max-w-lg">
-            Passionate about Artificial Intelligence, Machine Learning,
-            Deep Learning and building technology that makes a difference.
-            I love exploring ideas and turning them into real-world projects.
+          <p
+            style={{
+              color: "#e8a0c1",
+              fontSize: "19px",
+              marginTop: "12px",
+            }}
+          >
+            Aspiring Software Research & Development Intern
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-9">
-            <a
-              href="#projects"
-              className="bg-violet-600 hover:bg-violet-700 px-7 py-3 rounded-lg flex items-center gap-2 transition"
+          {/* Animated Personal Interests */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "8px",
+              marginTop: "28px",
+              minHeight: "45px",
+              fontSize: "26px",
+              fontWeight: "700",
+            }}
+          >
+            <span
+              style={{
+                color: "#df91b7",
+                whiteSpace: "nowrap",
+                textShadow: "0 0 12px rgba(223,145,183,0.55)",
+              }}
             >
-              Explore My Work <ArrowRight size={18} />
-            </a>
+              I'm a
+            </span>
 
-            <a
-              href="#contact"
-              className="border border-white/20 hover:border-violet-400 px-7 py-3 rounded-lg transition"
-            >
-              Contact Me
-            </a>
-          </div>
-
-          <div className="flex gap-6 mt-10 text-gray-400">
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
-              <Github className="hover:text-violet-400 transition" />
-            </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-              <Linkedin className="hover:text-violet-400 transition" />
-            </a>
-            <a href="mailto:your-email@example.com">
-              <Mail className="hover:text-violet-400 transition" />
-            </a>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentIdentity}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4 }}
+                style={{
+                  color: "#f2a8ce",
+                  fontSize: "26px",
+                  fontWeight: "700",
+                  textShadow:
+                    "0 0 8px rgba(242,168,206,0.8), 0 0 20px rgba(223,145,183,0.55), 0 0 35px rgba(223,145,183,0.3)",
+                }}
+              >
+                {identities[currentIdentity]}
+              </motion.span>
+            </AnimatePresence>
           </div>
         </motion.div>
 
@@ -75,26 +139,26 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="flex justify-center"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border border-violet-500/40 bg-gradient-to-br from-violet-600/20 to-blue-500/10 flex items-center justify-center shadow-2xl shadow-violet-900/30">
-            <div className="text-center">
-              <div className="text-8xl mb-4">👩🏻‍💻</div>
-              <p className="text-gray-400 tracking-widest text-sm">
-                BUILD · LEARN · CREATE
-              </p>
-            </div>
-          </div>
+          <img
+            src="/images/avatar.png"
+            alt="Ankita's anime guitar illustration"
+            style={{
+              width: "100%",
+              maxWidth: "460px",
+              aspectRatio: "1 / 1",
+              objectFit: "cover",
+              borderRadius: "25px",
+              border: "1px solid #d78caf",
+              boxShadow: "0 0 65px rgba(215,140,175,0.18)",
+            }}
+          />
         </motion.div>
-
       </div>
-
-      <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 animate-bounce"
-      >
-        <ArrowDown />
-      </a>
     </section>
   );
 }

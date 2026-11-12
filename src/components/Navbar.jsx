@@ -1,69 +1,96 @@
 
-import { Github, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("Home");
 
   const links = [
     ["Home", "#home"],
     ["About", "#about"],
-    ["Skills", "#skills"],
+    ["Education", "#education"],
     ["Projects", "#projects"],
     ["Contact", "#contact"],
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#080b14]/90 backdrop-blur-lg border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-violet-400">
-          AS<span className="text-white">.</span>
+    <nav
+      style={{
+        position: "absolute",
+        top: "20px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 100,
+        width: "min(94%, 1050px)",
+        padding: "14px 26px",
+        borderRadius: "50px",
+        background: "rgba(35, 29, 39, 0.88)",
+        backdropFilter: "blur(22px)",
+        WebkitBackdropFilter: "blur(22px)",
+        border: "1px solid rgba(223, 145, 183, 0.22)",
+        boxShadow: "0 8px 35px rgba(0,0,0,0.22)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "24px",
+        }}
+      >
+        {/* Logo */}
+        <a
+          href="#home"
+          onClick={() => setActive("Home")}
+          style={{
+            color: "#df91b7",
+            fontSize: "25px",
+            fontWeight: "800",
+            letterSpacing: "-1px",
+            textDecoration: "none",
+            flexShrink: 0,
+          }}
+        >
+          AS.
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          {links.map(([name, href]) => (
-            <a
-              key={name}
-              href={href}
-              className="text-gray-300 hover:text-violet-400 transition"
-            >
-              {name}
-            </a>
-          ))}
-        </div>
-
-        <div className="hidden md:flex gap-4">
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
-            <Github className="hover:text-violet-400 transition" />
-          </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-            <Linkedin className="hover:text-violet-400 transition" />
-          </a>
-        </div>
-
-        <button
-          className="md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+        {/* Navigation Links */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            gap: "clamp(12px, 2vw, 25px)",
+            flexWrap: "wrap",
+          }}
         >
-          {menuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-
-      {menuOpen && (
-        <div className="md:hidden flex flex-col gap-5 px-6 pb-6">
           {links.map(([name, href]) => (
             <a
               key={name}
               href={href}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-300"
+              onClick={() => setActive(name)}
+              style={{
+                color:
+                  active === name ? "#e8a0c1" : "#e8e1e9",
+                fontSize: "13px",
+                fontWeight: active === name ? "600" : "400",
+                textDecoration: "none",
+                transition: "all 0.25s ease",
+                whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#e8a0c1";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color =
+                  active === name ? "#e8a0c1" : "#e8e1e9";
+              }}
             >
               {name}
             </a>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }

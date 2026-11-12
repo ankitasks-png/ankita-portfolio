@@ -12,7 +12,11 @@ html {
 }
 
 body {
-  background: #080b14;
+  background-color: #17151d;
   color: #ffffff;
-  font-family: Inter, sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
