@@ -145,7 +145,7 @@ export default function Hero() {
           }}
         >
           <img
-            src="/images/avatar.png"
+            src={`${import.meta.env.BASE_URL}images/avatar.png`}
             alt="Ankita's anime guitar illustration"
             style={{
               width: "100%",
