@@ -105,8 +105,7 @@ export default function Education() {
             marginTop: "15px",
             lineHeight: "1.8",
           }}>
-            Every institution, experience and opportunity has
-            contributed to the person I am becoming.
+           Surviving engineering, one semester at a time. 😭
           </p>
         </motion.div>
 

@@ -51,12 +51,12 @@ export default function Projects() {
           className="mb-24 text-center"
         >
           <p className="text-pink-300 tracking-[0.35em] text-sm mb-7">
-            WHAT I'VE BEEN BUILDING ?? 🤔🤔
+            WHAT I'VE BEEN COOKING SO FAR ?? 🤔🤔
           </p>
 
           <h2 className="text-4xl md:text-6xl font-bold">
-            MY BEST PROJECTS{" "}
-            <span className="text-pink-300">LMAO 😁</span>
+            MY GOATED ONES.. {" "}
+            <span className="text-pink-300">SO FAR 😁</span>
           </h2>
         </motion.div>
 

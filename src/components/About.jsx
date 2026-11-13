@@ -118,7 +118,7 @@ export default function About() {
                 color: "#f1dce8",
               }}
             >
-              A curious mind, an evolving developer, and a constant learner.
+              A curious mind and AURA FARMING since 7th November , 2006 🔥
             </h2>
 
             <p
