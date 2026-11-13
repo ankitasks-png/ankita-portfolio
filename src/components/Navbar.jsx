@@ -9,6 +9,7 @@ export default function Navbar() {
     ["About", "#about"],
     ["Education", "#education"],
     ["Projects", "#projects"],
+    ["Certificates", "#certificates"],
     ["Contact", "#contact"],
   ];
 

@@ -210,8 +210,7 @@ export default function Education() {
             marginTop: "12px",
             lineHeight: "1.8",
           }}>
-            Research, competitions and communities that
-            have shaped my university experience.
+            GANGGG... I gotta life outside classroom too 😭😭
           </p>
 
           <div style={{
