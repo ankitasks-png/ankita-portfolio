@@ -55,6 +55,8 @@ export default function Hero() {
               color: "#e8a0c1",
               letterSpacing: "5px",
               marginBottom: "20px",
+              fontSize: "22px",
+              fontWeight: "600",
             }}
           >
             HELLO, I'M
@@ -74,7 +76,7 @@ export default function Hero() {
           <h2
             style={{
               color: "#d5c8d6",
-              fontSize: "21px",
+              fontSize: "27px",
               marginTop: "25px",
             }}
           >
@@ -84,7 +86,7 @@ export default function Hero() {
           <p
             style={{
               color: "#e8a0c1",
-              fontSize: "19px",
+              fontSize: "25px",
               marginTop: "12px",
             }}
           >
@@ -99,8 +101,8 @@ export default function Hero() {
               flexWrap: "wrap",
               gap: "8px",
               marginTop: "28px",
-              minHeight: "45px",
-              fontSize: "26px",
+              minHeight: "55px",
+              fontSize: "36px",
               fontWeight: "700",
             }}
           >
@@ -123,7 +125,7 @@ export default function Hero() {
                 transition={{ duration: 0.4 }}
                 style={{
                   color: "#f2a8ce",
-                  fontSize: "26px",
+                  fontSize: "36px",
                   fontWeight: "700",
                   textShadow:
                     "0 0 8px rgba(242,168,206,0.8), 0 0 20px rgba(223,145,183,0.55), 0 0 35px rgba(223,145,183,0.3)",
