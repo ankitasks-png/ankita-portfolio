@@ -84,7 +84,7 @@ export default function Projects() {
             >
               {/* Project Image */}
               <img
-                src={project.image}
+                src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, "")}`}
                 alt={`${project.title} project preview`}
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
