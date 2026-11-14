@@ -1,4 +1,3 @@
-
 import { motion } from "motion/react";
 
 const education = [
@@ -15,15 +14,15 @@ const education = [
   },
   {
     institution: "BASE PU College",
-    period: "Pre-University Education",
-    qualification: "Science Stream",
+    period: "2022 - 2024 ",
+    qualification: "Science Stream - Pre-University Education ",
     activities: ["Music", "Sports"],
     number: "02",
   },
   {
     institution: "PES University",
-    period: "Undergraduate",
-    qualification: "B.Tech · Computer Science and Engineering",
+    period: "2024 - 2028",
+    qualification: "Undergraduate - B.Tech · Computer Science and Engineering",
     activities: [],
     number: "03",
   },
@@ -105,7 +104,8 @@ export default function Education() {
             marginTop: "15px",
             lineHeight: "1.8",
           }}>
-           Surviving engineering, one semester at a time. 😭
+            Every institution, experience and opportunity has
+            contributed to the person I am becoming.
           </p>
         </motion.div>
 
@@ -209,7 +209,8 @@ export default function Education() {
             marginTop: "12px",
             lineHeight: "1.8",
           }}>
-            GANGGG... I gotta life outside classroom too 😭😭
+            Research, competitions and communities that
+            have shaped my university experience.
           </p>
 
           <div style={{
